@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>LoginChannelPartner</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css" integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous">
+    <script>
+        function generateCaptcha() {
+            var a = Math.floor((Math.random() * 10));
+            var b = Math.floor((Math.random() * 10));
+            var c = Math.floor((Math.random() * 10));
+            var d = Math.floor((Math.random() * 10));
+            const captcha = a.toString()+b.toString()+c.toString()+d.toString();
+            document.getElementById("captcha").value = captcha;
+            console.log(captcha);
+        }
+
+        function submitForm(type) {
+            checkCaptacha();
+            console.log(type);
+        }
+
+        function checkCaptacha() {
+            var input=document.getElementById("inputCaptcha").value;
+            var captcha=document.getElementById("captcha").value;
+            if(input!==captcha){
+                alert("Captcha incorrect");
+                generateCaptcha();
+            }
+        }
+    </script>
+</head>
+<body onload="generateCaptcha()">
+    <div class="container">
+         <div class="row">
+             <div class="col-xs-12 col-md-12 col-lg-4">
+                 <img src="ApnaShramikLogo.png" alt="logo" width="200px" height="200px" class="logo_img">
+             </div>
+             <div class="col-xs-6 col-md-6 col-lg-4">
+                    <div class="login-box">
+                        <h1>Login Channel Partner</h1>
+                         <div class="textbox">
+                             <i class="fa fa-user"></i>
+                             <input placeholder="Username" type="text" name="" value="">
+                        </div>
+                        <br>
+                        <div class="textbox">
+                            <i class="fa fa-key"></i>
+                            <input placeholder="Password" type="text" name="" value="">
+                        </div>
+                        <br>
+                        <div class="textbox">
+                            <i class="fa fa-envelope"></i>
+                            <input placeholder="Email Id" type="text" name="" value="">
+                        </div>
+                        <br>
+                        <div class="textbox">
+                            <i class="fa fa-info-circle"></i>
+                            <input placeholder="Details Of Shramik" type="text" name="" value="">
+                        </div>
+                        <br>
+                        <div class="textbox">
+                            <i class="fa fa-asterisk"></i>
+                            <input placeholder="Requirements (Pf/Claim)" type="text" name="" value="">
+                        </div>
+                        <br>
+                        <div class="textbox">
+                            <i class="fa fa-comments"></i>
+                            <input placeholder="Complaint" type="text" name="" value="">
+                        </div>
+                        <br>
+                        <div class="textbox">
+                            <i class="fa fa-id-card"></i>
+                            <input placeholder="Complaint No (Aadhar)" type="text" name="" value="">
+                        </div>
+                        <br>
+                        <div class="textbox">
+                            <i class="fa fa-tasks"></i>
+                            <input placeholder="Complaint Status" type="text" name="" value="">
+                        </div>
+                        <br>
+                        <div class="textbox">
+                            <i class="fa fa-tasks"></i>
+                            <input placeholder="Work Status" type="text" name="" value="">
+                        </div>
+                        <br>
+                        <div class="textbox">
+                            <i class="fa fa-rupee"></i>
+                            <input placeholder="Payment" type="text" name="" value="">
+                        </div>
+                        <br>
+                        <div class="captcha">
+                            <input type="text" id="captcha" disabled>
+                            <div class="textbox">
+                            <i class="fa fa-key"></i>
+                            <input type="text" placeholder="Enter Code" id="inputCaptcha">
+                            </div>
+                            <button class="btn btn-block btn-inline" onClick="generateCaptcha()">Refresh</button>
+                        </div></br>
+                    </div>
+                        <button type="button" name="button1" class="btn btn-block btn-inline">Deposit</button>
+                        <button type="button" name="button1" class="btn btn-block btn-inline">Received</button>
+                    </div>
+             </div>
+         </div>
+</body>
+</html>
